@@ -6,7 +6,7 @@ const path = require('path');
 module.exports = {
 	config: {
 		name: "owner",
-		author: "ShAn",
+		author: "Limon",
 		role: 0,
 		shortDescription: " ",
 		longDescription: "",
@@ -17,17 +17,17 @@ module.exports = {
 	onStart: async function ({ api, event }) {
 		try {
 			const ownerInfo = {
-				name: '𝑬𝒘𝑹 𝑺𝒉𝑨𝒏',
-				gender: '𝑴𝒂𝑳𝒆',
-				Birthday: '10-𝟎𝟕-𝟐𝟎𝟎5',
+				name: 'Limon Hossain Shuvo',
+				gender: '𝑴a𝑳𝒆',
+				Birthday: '13-10-𝟐𝟎𝟎7',
 				religion: '𝙄𝒔𝒍𝑨𝒎',
 				hobby: '𝑺𝒍𝒆𝒆𝑷𝒊𝒏𝑮',
-				Fb: 'https://www.facebook.com/sirana252',
+				Fb: 'https://www.facebook.com/adminn.2018',
 				Relationship: '𝑺𝒊𝒏𝑮𝒆𝒍',
-				Height: '5"3'
+				Height: '5"10'
 			};
 
-			const bold = 'https://drive.google.com/uc?export=download&id=1J4yQ13L2WTpdOuqcP0yEmzULACdwfvnQ';
+			const bold = 'https://drive.google.com/uc?export=download&id=1Hy9SmvIJzU5aXbjjGTlEUwCihOWIj6Fk';
 			const tmpFolderPath = path.join(__dirname, 'tmp');
 
 			if (!fs.existsSync(tmpFolderPath)) {
