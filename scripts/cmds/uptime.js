@@ -39,7 +39,7 @@ module.exports = {
       // Stylish message design
       const message = `
 ┏━━━━━━━━━━━━━━━┓
-  ♡𝕮𝖍𝖔𝖈𝖔𝖑𝖆𝖙𝖊 𝕼𝖚𝖊𝖊𝖓♡
+  MÓHUA
 ┗━━━━━━━━━━━━━━━┛
 📆 Uptime: ${uptimeString}
 🙋 Total Users: ${allUsers.length}
