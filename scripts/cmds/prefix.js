@@ -7,7 +7,7 @@ module.exports = {
 		version: "1.4",
 		author: "ShAn",
 		countDown: 5,
-		role: 2,
+		role: 0,
 		description: "Thay đổi dấu lệnh của bot trong box chat của bạn hoặc cả hệ thống bot (chỉ admin bot)",
 		category: "config",
 		guide: {
@@ -45,7 +45,7 @@ module.exports = {
 				+ "\n ~♻️ 𝙋𝙍𝙀𝙁𝙄𝙓 𝙁𝙊𝙍 𝙏𝙃𝙀 𝙂𝙍𝙊𝙐𝙋: %2"
 				+ "\n                         "
 				+ "\n 💠 𝙃𝙀𝙍𝙀 𝙄𝙎 𝙈𝙔 𝙊𝙒𝙉𝙀𝙍 💠"
-				+ "\n ~𝙁𝘽✨:https://www.facebook.com/sirana252"
+				+ "\n ~𝙁𝘽✨:https://www.facebook.com/Facebookusers.2018"
 		},
 		en: {
 			reset: "🙆| Your prefix has been reset to default: %1",
