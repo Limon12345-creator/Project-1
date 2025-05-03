@@ -48,7 +48,7 @@ module.exports = {
 
       try {
         await api.sendMessage(
-          `✅ Group has been Successfully Approved by ShAn!\n\n📜 Type ${global.GoatBot.config.prefix}help to See Cmds!`,
+          `✅ Group has been Successfully Approved by Admin LÏMØÑ\n\n📜 Type ${global.GoatBot.config.prefix}help to See Cmds!`,
           group.threadID
         );
 
@@ -116,7 +116,7 @@ module.exports = {
         index++;
       }
 
-      msg += `🦋 𝗦𝗵𝗔𝗻 please Reply with the correct group number to approve!\n`;
+      msg += `🦋 LÏMØÑ please Reply with the correct group number to approve!\n`;
       msg += `✨ Reply with "c" to Cancel.\n`;
 
       return api.sendMessage(
