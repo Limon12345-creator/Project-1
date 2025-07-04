@@ -1,82 +1,46 @@
-const models = [
-  'DreamShaper',
-  'MBBXL_Ultimate',
-  'Mysterious',
-  'Copax_TimeLessXL',
-  'Pixel_Art_XL',
-  'ProtoVision_XL',
-  'SDXL_Niji',
-  'CounterfeitXL',
-  'DucHaiten_AIart_SDXL'
-];
+const axios = require("axios");
 
-module.exports = {
-  config: {
-    name: "gen",
-    version: "1.0",
-    author: "RedWan×MAHI×Sanam",
-    countDown: 5,
-    role: 0,
-    longDescription: {
-      vi: "",
-      en: "Get images from text.",
-    },
-    category: "Image~Create",
-    guide: {
-      vi: "",
-      en: "Type {pn} with your prompts | (model name)\nHere are the Supported models:\n" + models.map((item, index) => `${index + 1}. ${item}`).join('\n'),
-    },
-  },
+module.exports.config = {
+  name: "gen",
+  version: "2.0",
+  role: 0,
+  author: "Dipto",
+  description: "Flux Image Generator",
+  category: "tool",
+  premium: true,
+  guide: "{pn} [prompt] --ratio 1024x1024\n{pn} [prompt]",
+  countDown: 5,
+};
 
-  onStart: async function ({ api, args, message, event }) {
-    try {
-      const text = args.join(" ");
-      if (!text) {
-        return message.reply("Please provide a prompt.");
-      }
+module.exports.onStart = async ({ event, args, api }) => {
+  const dipto = "https://www.noobs-api.rf.gd/dipto";
 
-      let prompt, model;
-      if (text.includes("|")) {
-        const [promptText, modelText] = text.split("|").map((str) => str.trim());
-        prompt = promptText;
-        model = modelText;
+  try {
+    const prompt = args.join(" ");
+    const [prompt2, ratio = "1:1"] = prompt.includes("--ratio")
+      ? prompt.split("--ratio").map(s => s.trim())
+      : [prompt, "1:1"];
 
-        const modelNumber = parseInt(model);
-        if (modelNumber >= 1 && modelNumber <= 9) {
-          const modelNames = [
-            'DreamShaper',
-            'MBBXL_Ultimate',
-            'Mysterious',
-            'Copax_TimeLessXL',
-            'Pixel_Art_XL',
-            'ProtoVision_XL',
-            'SDXL_Niji',
-            'CounterfeitXL',
-            'DucHaiten_AIart_SDXL'
-          ];
-          model = modelNames[modelNumber - 1];
-        } else {
-          return message.reply("Invalid model number. Supported models are:\n" + models.map((item, index) => `${index + 1}. ${item}`).join('\n'));
-        }
-      } else {
-        prompt = text;
-        model = "DreamShaper";
-      }
+    const startTime = Date.now();
+    
+    const waitMessage = await api.sendMessage("Generating image, please wait..🖤", event.threadID);
+    api.setMessageReaction("⌛", event.messageID, () => {}, true);
 
-      let id;
-      api.setMessageReaction("⏳", event.messageID, () => {}, true);
-      const waitingMessage = await message.reply("✅ | Creating your Imagination...");
+    const apiurl = `${dipto}/flux?prompt=${encodeURIComponent(prompt2)}&ratio=${encodeURIComponent(ratio)}`;
+    const response = await axios.get(apiurl, { responseType: "stream" });
 
-      const API = `https://www.api.vyturex.com/curios?prompt=${encodeURIComponent(prompt)}&modelType=${model}`;
-      const imageStream = await global.utils.getStreamFromURL(API);
+    const timeTaken = ((Date.now() - startTime) / 1000).toFixed(2);
 
-      await message.reply({
-        attachment: imageStream,
-      });
-      api.setMessageReaction("✅", event.messageID, () => {}, true);
-      await api.unsendMessage(waitingMessage.messageID);
-    } catch (error) {
-      message.reply("Your prompt is blocked. Try again later with another prompt. [ Tor Mayre Chudi REDWAN/ MAHI  Othoba Sanam Er Permission Nicos? ]");
-    }
-  },
+    api.setMessageReaction("✅", event.messageID, () => {}, true);
+    api.unsendMessage(waitMessage.messageID);
+
+    api.sendMessage({
+      body: `Here's your image (Generated in ${timeTaken} seconds)`,
+      attachment: response.data,
+    }, event.threadID, event.messageID);
+    
+  } catch (e) {
+    console.error(e);
+    api.sendMessage("Error: " + e.message, event.threadID, event.messageID);
+  }
 };
