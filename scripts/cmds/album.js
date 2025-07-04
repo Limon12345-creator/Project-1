@@ -9,7 +9,7 @@ module.exports = {
   role: 0,
   author: "𝗦𝗵𝗔𝗻",//Don't Change Author name.
   longDescription: "Displays album options for selection.",
-  category: "𝗠𝗘𝗗𝗜𝗔",
+  category: "Media",
   countDown: 5,
   guide: {
       en: "{p}{n} or add [cartoon/photo/lofi/sad/islamic/funny/horny/anime]"
@@ -35,7 +35,7 @@ onStart: async function ({ api, Reply, event, message, args}) {
     "𝗥𝗮𝗻𝗱𝗼𝗺 𝗣𝗵𝗼𝘁𝗼"
   ];
 
-  const message = "❤‍🩹 𝗖𝗵𝗼𝗼𝘀𝗲 𝗮𝗻 𝗼𝗽𝘁𝗶𝗼𝗻𝘀 𝗕𝗮𝗯𝘆 <💝\n"+"✿━━━━━━━━━━━━━━━━━━━━━━━✿\n"+ albumOptions.map((option, index) => `${index + 1}. ${option} 📛`).join("\n")+"\n✿━━━━━━━━━━━━━━━━━━━━━━━✿";
+  const message = "❤‍🩹 𝗖𝗵𝗼𝗼𝘀𝗲 𝗮𝗻 𝗼𝗽𝘁𝗶𝗼𝗻𝘀  <💝\n"+"✿━━━━━━━━━━━━━━━━━━━━━━━✿\n"+ albumOptions.map((option, index) => `${index + 1}. ${option} 📛`).join("\n")+"\n✿━━━━━━━━━━━━━━━━━━━━━━━✿";
 
   await api.sendMessage(message, event.threadID,(error, info) => {
   global.GoatBot.onReply.set(info.messageID, {
