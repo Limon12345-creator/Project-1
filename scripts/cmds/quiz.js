@@ -2,7 +2,7 @@ const axios = require("axios");
 
 const baseApiUrl = async () => {
   const base = await axios.get(
-    `https://raw.githubusercontent.com/Blankid018/D1PT0/main/baseApiUrl.json`
+    `https://raw.githubusercontent.com/Mostakim0978/D1PT0/refs/heads/main/baseApiUrl.json`
   );
   return base.data.api;
 };
@@ -15,8 +15,8 @@ module.exports = {
     author: "Dipto",
     countDown: 0,
     role: 0,
-    category: "game",
-    guide: "{p}quiz2 \n{pn}quiz2 bn \n{p}quiz2 en",
+    category: "𝗚𝗔𝗠𝗘",
+    guide: "{p}quiz \n{pn}quiz bn \n{p}quiz en",
   },
 
   onStart: async function ({ api, event, usersData, args }) {
@@ -31,7 +31,7 @@ module.exports = {
 
     try {
       const response = await axios.get(
-        `${await baseApiUrl()}/quiz2?category=${category}&q=random`,
+        `${await baseApiUrl()}/quiz?category=${category}&q=random`,
       );
 
       const quizData = response.data.question;
