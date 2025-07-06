@@ -20,7 +20,7 @@ module.exports = {
 
   onStart: async function ({ api, event }) {
     try {
-      api.setMessageReaction('😘', event.messageID, (err) => {}, true);
+      api.setMessageReaction('💀', event.messageID, (err) => {}, true);
 
       const ShAnInfo = {
         name: '🔗LIMON HOSSAIN SHUVO',
