@@ -144,3 +144,26 @@ guide: {
         tag: firstName,
         fromIndex: 0
       });
+      
+      mentions.push({
+        id: secondUser,
+        tag: secondName,
+        fromIndex: firstName.length + 3 
+      });
+      
+      return api.sendMessage(
+        {
+          body: messageBody,
+          mentions: mentions,
+          attachment: fs.createReadStream(imagePath)
+        },
+        threadID,
+        () => fs.unlinkSync(imagePath),
+        messageID
+      );
+    } catch (err) {
+      console.error(err);
+      return api.sendMessage("❌ Failed  to  marry.", threadID, messageID);
+    }
+  }
+};
