@@ -8,7 +8,7 @@ const baseApiUrl = async () => {
 module.exports = {
   config: {
     name: "owner",
-    aliases: ["shanke"],
+    aliases: ["limon k"],
     version: "2.0.0",
     author: "𝗦𝗵𝗔𝗻",
     role: 0,
@@ -38,11 +38,11 @@ module.exports = {
         timeout: 30000 // 30 seconds timeout
       });
       
-      if (!ShAn.data || !ShAn.data.url) {
+      if (!ShAn.data || !ShAn.data.ShAn) {
         throw new Error("❌ Invalid API response format");
       }
       
-      const ShaN = ShAn.data.url;
+      const ShaN = ShAn.data.ShAn;
       
       const messageBody = `
 ╔════ஜ۩۞۩ஜ═══╗
