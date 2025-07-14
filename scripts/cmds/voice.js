@@ -7,7 +7,7 @@ const FormData = require("form-data");
 const { MONGODB_URI } = require("./DB/Mongodb.json");
 
 // Catbox
-const CATBOX_HASH = "9f09cd44af9d1d8b2197adf9f";
+const CATBOX_HASH = "b1fcfaa7b67426def94fb3712";
 const CATBOX_UPLOAD_URL = "https://catbox.moe/user/api.php";
 
 
