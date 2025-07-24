@@ -45,14 +45,14 @@ module.exports = {
 
       Object.keys(categories).forEach((category) => {
         if (category !== "info") {
-          msg += `\n᯽༄-----------༄᯽\n│『 ${category.toUpperCase()} 』`;
+          msg += `\n\n│『 ${category.toUpperCase()} 』`;
 
           const names = categories[category].commands.sort();
           names.forEach((item) => {
             msg += `\n│𖣘${item}𖣘`;
           });
 
-          msg += `\n𖣘------------♪`;
+          msg += `\n`;
         }
       });
 
@@ -84,7 +84,7 @@ module.exports = {
         return;
       }
 
-      let msg = `✯༄----------------\n✯ ${categoryName.toUpperCase()} COMMANDS 🔹\n╚══════════════╝\n`;
+      let msg = `✯༄\n✯ ${categoryName.toUpperCase()} COMMANDS 🔹\n^\n`;
 
       filteredCommands.forEach((cmd) => {
         msg += `\n༆ ${cmd.config.name} ༆`;
@@ -109,7 +109,7 @@ module.exports = {
         const guideBody = configCommand.guide?.en || "No guide available.";
         const usage = guideBody.replace(/{p}/g, prefix).replace(/{n}/g, configCommand.name);
 
-        const response = `༆-- 𝑵𝒂𝒎𝒆--༆\n` +
+        const response = `༆ 𝑵𝒂𝒎𝒆--༆\n` +
           `│ ${configCommand.name}\n` +
           `├── INFO\n` +
           `│ Description: ${longDescription}\n` +
