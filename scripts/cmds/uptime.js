@@ -39,7 +39,7 @@ module.exports = {
       // Stylish message design
       const message = `
 ┏━━━━━━━━━━━━━━━┓
-  MÓHUA
+  ᯽𝑴𝒊𝑴𝒊᯽
 ┗━━━━━━━━━━━━━━━┛
 📆 Uptime: ${uptimeString}
 🙋 Total Users: ${allUsers.length}
@@ -47,7 +47,7 @@ module.exports = {
 🔥 Active Threads: ${activeThreads}
 📨 Total Messages: ${totalMessages}
 ━━━━━━━━━━━━━━━━━━━
-💡 Keep the vibes going!
+★𝒌𝒆𝒆𝒑 𝒖𝒔𝒊𝒏𝒈 𝒎𝒆★
       `;
 
       api.sendMessage(message.trim(), event.threadID);
