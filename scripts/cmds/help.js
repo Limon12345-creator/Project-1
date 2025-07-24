@@ -49,7 +49,7 @@ module.exports = {
 
           const names = categories[category].commands.sort();
           names.forEach((item) => {
-            msg += `\n│ఌ︎${item}ఌ︎`;
+            msg += `\n│𖣘${item}𖣘`;
           });
 
           msg += `\n𖣘------------♪`;
@@ -57,7 +57,7 @@ module.exports = {
       });
 
       const totalCommands = commands.size;
-      msg += `\n𝑪𝒖𝒓𝒓𝒏𝒆𝒕𝒍𝒚 𝒕𝒉𝒆 𝒃𝒐𝒕 𝒉𝒂𝒔 ${totalCommands} 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒔 𝒕𝒉𝒂𝒕 𝒄𝒂𝒏 𝒃𝒆 𝒖𝒔𝒆\n`;
+      msg += `\n𝑪𝒖𝒓𝒓𝒏𝒆𝒕𝒍𝒚 𝒕𝒉𝒆 𝒃𝒐𝒕 𝒉𝒂𝒔 ${totalCommands} 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒔 𝒕𝒉𝒂𝒕 𝒄𝒂𝒏 𝒃𝒆 𝒖𝒔𝒆 \n`;
       msg += `\n𝑻𝒚𝒑𝒆 ${prefix}𝒉𝒆𝒍𝒑 𝒄𝒐𝒎𝒎𝒂𝒏𝒅 𝒏𝒂𝒎𝒆 𝒕𝒐 𝒗𝒊𝒆𝒘 𝒕𝒉𝒆 𝒅𝒆𝒕𝒂𝒊𝒍𝒔 𝒐𝒇 𝒕𝒉𝒂𝒕 𝒄𝒐𝒎𝒎𝒂𝒏𝒅\n`;
       msg += `\n𖤍𝑩𝑶𝑻 𝑵𝑨𝑴𝑬 𖤍: 𝙈𝙞𝙢𝙞`;
       msg += `\n༆𝑩𝑶𝑻 𝑶𝑾𝑵𝑬𝑹༆`;
