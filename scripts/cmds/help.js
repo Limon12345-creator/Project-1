@@ -33,7 +33,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += `╔══════════════╗\n🔹 COMMAND LIST 🔹\n╚══════════════╝\n`;
+      msg += `\n❦︎𝕋𝕙𝕖 𝕝𝕚𝕤𝕥 𝕠𝕗 𝕞𝕚𝕞𝕚'𝕤 𝕔𝕠𝕞𝕞𝕒𝕟𝕕❣︎\n`;
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -45,25 +45,25 @@ module.exports = {
 
       Object.keys(categories).forEach((category) => {
         if (category !== "info") {
-          msg += `\n╭────────────⭓\n│『 ${category.toUpperCase()} 』`;
+          msg += `\n᯽༄-----------༄᯽\n│『 ${category.toUpperCase()} 』`;
 
           const names = categories[category].commands.sort();
           names.forEach((item) => {
-            msg += `\n│💠${item}💠`;
+            msg += `\n│ఌ︎${item}ఌ︎`;
           });
 
-          msg += `\n╰────────⭓`;
+          msg += `\n𖣘------------♪`;
         }
       });
 
       const totalCommands = commands.size;
-      msg += `\n𝗖𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆, 𝘁𝗵𝗲 𝗯𝗼𝘁 𝗵𝗮𝘀 ${totalCommands} 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝘁𝗵𝗮𝘁 𝗰𝗮𝗻 𝗯𝗲 𝘂𝘀𝗲𝗱\n`;
-      msg += `\n𝗧𝘆𝗽𝗲 ${prefix}𝗵𝗲𝗹𝗽 𝗰𝗺𝗱𝗡𝗮𝗺𝗲 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗳 𝘁𝗵𝗮𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱\n`;
-      msg += `\n🫧𝘽𝙊𝙏 𝙉𝘼𝙈𝙀🫧: MÕHÜÆ👾`;
-      msg += `\n🔹 𝘽𝙊𝙏 𝙊𝙒𝙉𝙀𝙍 🔹`;
+      msg += `\n𝑪𝒖𝒓𝒓𝒏𝒆𝒕𝒍𝒚 𝒕𝒉𝒆 𝒃𝒐𝒕 𝒉𝒂𝒔 ${totalCommands} 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒔 𝒕𝒉𝒂𝒕 𝒄𝒂𝒏 𝒃𝒆 𝒖𝒔𝒆\n`;
+      msg += `\n𝑻𝒚𝒑𝒆 ${prefix}𝒉𝒆𝒍𝒑 𝒄𝒐𝒎𝒎𝒂𝒏𝒅 𝒏𝒂𝒎𝒆 𝒕𝒐 𝒗𝒊𝒆𝒘 𝒕𝒉𝒆 𝒅𝒆𝒕𝒂𝒊𝒍𝒔 𝒐𝒇 𝒕𝒉𝒂𝒕 𝒄𝒐𝒎𝒎𝒂𝒏𝒅\n`;
+      msg += `\n𖤍𝑩𝑶𝑻 𝑵𝑨𝑴𝑬 𖤍: 𝙈𝙞𝙢𝙞`;
+      msg += `\n༆𝑩𝑶𝑻 𝑶𝑾𝑵𝑬𝑹༆`;
       msg += `\n 	 					`;
-      msg += `\n~𝙉𝘼𝙈𝙀: LÏMØÑ`;
-      msg += `\n~𝙁𝘽:https://www.facebook.com/Facebookusers.2018`;
+      msg += `\n~𝑵𝑨𝑴𝑬: ✯𝚂𝙷𝚄𝚅𝙾✯`;
+      msg += `\n~𝑭𝑩:https://www.facebook.com/Facebookusers.2018`;
 
       await message.reply({
         body: msg,
@@ -84,10 +84,10 @@ module.exports = {
         return;
       }
 
-      let msg = `╔══════════════╗\n🔹 ${categoryName.toUpperCase()} COMMANDS 🔹\n╚══════════════╝\n`;
+      let msg = `✯༄----------------\n✯ ${categoryName.toUpperCase()} COMMANDS 🔹\n╚══════════════╝\n`;
 
       filteredCommands.forEach((cmd) => {
-        msg += `\n💠 ${cmd.config.name} 💠`;
+        msg += `\n༆ ${cmd.config.name} ༆`;
       });
 
       await message.reply(msg);
@@ -109,7 +109,7 @@ module.exports = {
         const guideBody = configCommand.guide?.en || "No guide available.";
         const usage = guideBody.replace(/{p}/g, prefix).replace(/{n}/g, configCommand.name);
 
-        const response = `╭── NAME ────⭓\n` +
+        const response = `༆-- 𝑵𝒂𝒎𝒆--༆\n` +
           `│ ${configCommand.name}\n` +
           `├── INFO\n` +
           `│ Description: ${longDescription}\n` +
