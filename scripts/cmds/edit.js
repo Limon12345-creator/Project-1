@@ -34,14 +34,14 @@ module.exports = {
 
       // Call API
       const { data } = await axios.get(apiUrl);
-      if (!data.url) throw new Error("API returned no image");
+      if (!data.ShAn) throw new Error("API returned no image");
 
       // Download and send
       const tempPath = path.join(__dirname, `edit_${Date.now()}.jpg`);
       const writer = fs.createWriteStream(tempPath);
       
       const response = await axios({
-        url: data.url,
+        url: data.ShAn,
         method: 'GET',
         responseType: 'stream'
       });
