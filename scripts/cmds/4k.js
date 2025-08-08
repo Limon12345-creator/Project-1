@@ -12,7 +12,7 @@ module.exports = {
 	config: {
 		name: "4k", 
 		version: "1.0", 
-		author: "Alim",
+		author: "ShAn",
 		countDown: 10, 
 		role: 0,
 		shortDescription: {
@@ -23,7 +23,7 @@ module.exports = {
 		}, 
 		category: "𝐏ʜᴏᴛᴏ 𝐄ᴅɪᴛ",
 		guide: {
-			en: "{prefix}4k - Reply to an image to enhance it\n{prefix}4k <image_url> - Enhance image from URL"
+			en: "{p}{n} - Reply to an image to enhance it\n{p}{n} <image_url> - Enhance image from URL"
 		} 
 	},
 
