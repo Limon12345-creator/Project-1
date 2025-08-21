@@ -1,4 +1,4 @@
-(cmd install cute.js const axios = require('axios');
+const axios = require('axios');
 
 const baseApiUrl = async () => {
   const base = await axios.get('https://raw.githubusercontent.com/EwrShAn25/ShAn.s-Api/refs/heads/main/Api.json');
