@@ -15,7 +15,7 @@ module.exports.config = {
 
 // Owner UID list
 const ownerUIDs = [
-  "100034630383353",
+  "100050374668248",
   "61573391511905",
   "100056042629471"
 ];
