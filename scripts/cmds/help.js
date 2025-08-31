@@ -121,7 +121,7 @@ module.exports = {
           `├── Usage\n` +
           `│ ${usage}\n` +
           `├── Notes\n` +
-          `│ The content inside <ShAn> can be changed\n` +
+          `│ The content inside «𝑳𝑰𝑴𝑶𝑵» can be changed\n` +
           `│ The content inside [a|b|c] is a or b or c\n` +
           `╰━━━━━━━❖`;
 
