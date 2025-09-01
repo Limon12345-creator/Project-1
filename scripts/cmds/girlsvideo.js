@@ -6,34 +6,40 @@ const baseApiUrl = async () => {
 
 module.exports = {
   config: { 
-    name: "sei",
-    aliases: ["sei","girls"],
+    name: "girlsvideo",
+    aliases: ["girls"],
     version: "2.0",
     author: "𝗦𝗵𝗔𝗻", // DO NOT CHANGE AUTHOR INFORMATION
     countDown: 20,
     role: 0,
-    shortDescription: "",
-    longDescription: "send you a hot girl video",
+    shortDescription: {
+      en: "Send you a girl video"
+    },
+    longDescription: {
+      en: "Send you a hot and sexy girl video"
+    },
     category: "18+",
-    guide: "{p}{n}",
+    guide: {
+      en: "{p}{n}"
+    },
   },
 
   onStart: async function ({ message }) {
     try {
-      const loadingMessage = await message.reply(" Lucca 2 min tham ");
+      const loadingMessage = await message.reply("⏳কিরে লুচ্চা 🤨 দারা দিতেছি 😜...");
       
-      const ShAn = await axios.get(`${await baseApiUrl()}/ShAn/girlsvideo`, {
+      const ShAn = await axios.get(`${await baseApiUrl()}/ShAn-girlsvideo`, {
         timeout: 10000 // 10 seconds timeout
       });
       
-      if (!ShAn.data || !ShAn.data.url) {
+      if (!ShAn.data || !ShAn.data.ShAn) {
         throw new Error("❌ Invalid API response format");
       }
       
-      const ShaN = ShAn.data.url;
+      const ShaN = ShAn.data.ShAn;
       
       message.reply({
-        body: 'dekh dekh sei',
+        body: '「 এই নে বোকাচুলা দেখ 🥵💦 」',
         attachment: await global.utils.getStreamFromURL(ShaN)
       });
 
@@ -43,7 +49,7 @@ module.exports = {
       console.error('Error:', error);
       
       try {
-        await message.reply("⚠️ Sorry, the video couldn't be loaded right now. Possible reasons:\n\n• API server is down.");
+        await message.reply("⚠ Sorry, the video couldn't be loaded right now. Possible reasons:\n\n• API server is down\nPlease Contact 🎀Ewr ShAn...");
       } catch (e) {
         console.error('Failed to send error message:', e);
       }
